@@ -1,7 +1,6 @@
 // ignore_for_file: prefer_const_constructors
 
-import 'package:event_project/Admin/addevent.dart';
-import 'package:event_project/Admin/requst.dart';
+
 import 'package:flutter/material.dart';
 
 class Adnot extends StatefulWidget {
@@ -74,11 +73,7 @@ class _AdnotState extends State<Adnot> {
                             backgroundColor:
                                 const Color.fromARGB(255, 60, 97, 162),
                             onPressed: () {
-                              Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                    builder: (context) => Addevent(),
-                                  ));
+                              Navigator.of(context).pop();
                             },
                             child: Text(
                               'Send',

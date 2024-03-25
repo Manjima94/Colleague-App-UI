@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_constructors
 
-
+import 'package:event_project/student/actions.dart';
+import 'package:event_project/teacher/Studetil.dart';
 import 'package:flutter/material.dart';
 
 class Studlist extends StatefulWidget {
@@ -18,18 +19,18 @@ class _StudlistState extends State<Studlist> {
         title: Padding(
           padding: const EdgeInsets.only(left: 70.0),
           child: Text(
-            'Registration',
+            'Students List',
             style: TextStyle(fontWeight: FontWeight.bold),
           ),
         ),
         actions: [
           IconButton(
             onPressed: () {
-              // Navigator.push(
-              //     context,
-              //     MaterialPageRoute(
-              //       builder: (context) => Account(),
-              //     ));
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => Account(),
+                  ));
             },
             icon: Icon(
               Icons.person_outline_rounded,
@@ -40,11 +41,11 @@ class _StudlistState extends State<Studlist> {
               padding: const EdgeInsets.all(8.0),
               child: IconButton(
                   onPressed: () {
-                    // Navigator.push(
-                    //     context,
-                    //     MaterialPageRoute(
-                    //       builder: (context) => Notificat(),
-                    //     ));
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => Notificat(),
+                        ));
                   },
                   icon: Icon(
                     Icons.notifications_active_outlined,
@@ -63,13 +64,13 @@ class _StudlistState extends State<Studlist> {
                     height: 60,
                     width: 350,
                     child: FloatingActionButton(
-                      backgroundColor: Color.fromARGB(255, 153, 187, 201),
+                      backgroundColor: Color.fromARGB(255, 215, 234, 243),
                       onPressed: () {
-                        // Navigator.push(
-                        //     context,
-                        //     MaterialPageRoute(
-                        //       builder: (context) => (),
-                        //     ));
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => Stddetails(),
+                            ));
                       },
                       child: ListTile(
                         leading: CircleAvatar(
@@ -87,14 +88,14 @@ class _StudlistState extends State<Studlist> {
                     height: 60,
                     width: 350,
                     child: FloatingActionButton(
-                      backgroundColor: Color.fromARGB(255, 153, 187, 201),
+                      backgroundColor: Color.fromARGB(255, 215, 234, 243),
                       onPressed: () {},
                       child: ListTile(
                         leading: CircleAvatar(
                           backgroundImage: AssetImage('images/user.png'),
                           backgroundColor: Colors.white,
                         ),
-                        title: Text('Student Name'),
+                        title: Text(' Name'),
                         subtitle: Text('Department'),
                       ),
                     )),
@@ -105,14 +106,14 @@ class _StudlistState extends State<Studlist> {
                     height: 60,
                     width: 350,
                     child: FloatingActionButton(
-                      backgroundColor: Color.fromARGB(255, 153, 187, 201),
+                      backgroundColor: Color.fromARGB(255, 215, 234, 243),
                       onPressed: () {},
                       child: ListTile(
                         leading: CircleAvatar(
                           backgroundImage: AssetImage('images/user.png'),
                           backgroundColor: Colors.white,
                         ),
-                        title: Text('Student Name'),
+                        title: Text(' Name'),
                         subtitle: Text('Department'),
                       ),
                     )),
@@ -123,14 +124,14 @@ class _StudlistState extends State<Studlist> {
                     height: 60,
                     width: 350,
                     child: FloatingActionButton(
-                      backgroundColor: Color.fromARGB(255, 153, 187, 201),
+                      backgroundColor: Color.fromARGB(255, 215, 234, 243),
                       onPressed: () {},
                       child: ListTile(
                         leading: CircleAvatar(
                           backgroundImage: AssetImage('images/user.png'),
                           backgroundColor: Colors.white,
                         ),
-                        title: Text('Student Name'),
+                        title: Text(' Name'),
                         subtitle: Text('Department'),
                       ),
                     )),
@@ -141,14 +142,14 @@ class _StudlistState extends State<Studlist> {
                     height: 60,
                     width: 350,
                     child: FloatingActionButton(
-                      backgroundColor: Color.fromARGB(255, 153, 187, 201),
+                      backgroundColor: Color.fromARGB(255, 215, 234, 243),
                       onPressed: () {},
                       child: ListTile(
                         leading: CircleAvatar(
                           backgroundImage: AssetImage('images/user.png'),
                           backgroundColor: Colors.white,
                         ),
-                        title: Text('Student Name'),
+                        title: Text(' Name'),
                         subtitle: Text('Department'),
                       ),
                     )),
@@ -159,14 +160,14 @@ class _StudlistState extends State<Studlist> {
                     height: 60,
                     width: 350,
                     child: FloatingActionButton(
-                      backgroundColor: Color.fromARGB(255, 153, 187, 201),
+                      backgroundColor: Color.fromARGB(255, 215, 234, 243),
                       onPressed: () {},
                       child: ListTile(
                         leading: CircleAvatar(
                           backgroundImage: AssetImage('images/user.png'),
                           backgroundColor: Colors.white,
                         ),
-                        title: Text('Student Name'),
+                        title: Text(' Name'),
                         subtitle: Text('Department'),
                       ),
                     )),
@@ -177,14 +178,14 @@ class _StudlistState extends State<Studlist> {
                     height: 60,
                     width: 350,
                     child: FloatingActionButton(
-                      backgroundColor: Color.fromARGB(255, 153, 187, 201),
+                      backgroundColor: Color.fromARGB(255, 215, 234, 243),
                       onPressed: () {},
                       child: ListTile(
                         leading: CircleAvatar(
                           backgroundImage: AssetImage('images/user.png'),
                           backgroundColor: Colors.white,
                         ),
-                        title: Text('Student Name'),
+                        title: Text(' Name'),
                         subtitle: Text('Department'),
                       ),
                     )),
@@ -195,14 +196,14 @@ class _StudlistState extends State<Studlist> {
                     height: 60,
                     width: 350,
                     child: FloatingActionButton(
-                      backgroundColor: Color.fromARGB(255, 153, 187, 201),
+                      backgroundColor: Color.fromARGB(255, 215, 234, 243),
                       onPressed: () {},
                       child: ListTile(
                         leading: CircleAvatar(
                           backgroundImage: AssetImage('images/user.png'),
                           backgroundColor: Colors.white,
                         ),
-                        title: Text('Student Name'),
+                        title: Text(' Name'),
                         subtitle: Text('Department'),
                       ),
                     )),
@@ -213,14 +214,14 @@ class _StudlistState extends State<Studlist> {
                     height: 60,
                     width: 350,
                     child: FloatingActionButton(
-                      backgroundColor: Color.fromARGB(255, 153, 187, 201),
+                      backgroundColor: Color.fromARGB(255, 215, 234, 243),
                       onPressed: () {},
                       child: ListTile(
                         leading: CircleAvatar(
                           backgroundImage: AssetImage('images/user.png'),
                           backgroundColor: Colors.white,
                         ),
-                        title: Text('Student Name'),
+                        title: Text(' Name'),
                         subtitle: Text('Department'),
                       ),
                     )),

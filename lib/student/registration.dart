@@ -1,15 +1,17 @@
 // ignore_for_file: prefer_const_constructors
 
+import 'package:event_project/student/tabbar.dart';
+
 import 'package:flutter/material.dart';
 
-class Addevent extends StatefulWidget {
-  const Addevent({super.key});
+class Register extends StatefulWidget {
+  const Register({super.key});
 
   @override
-  State<Addevent> createState() => _AddeventState();
+  State<Register> createState() => _RegisterState();
 }
 
-class _AddeventState extends State<Addevent> {
+class _RegisterState extends State<Register> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -18,7 +20,7 @@ class _AddeventState extends State<Addevent> {
         title: Padding(
           padding: const EdgeInsets.only(left: 70.0),
           child: Text(
-            ' Add Event ',
+            'Registration',
             style: TextStyle(fontWeight: FontWeight.bold),
           ),
         ),
@@ -29,7 +31,7 @@ class _AddeventState extends State<Addevent> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              ' Event Name',
+              'Name',
               style: TextStyle(fontWeight: FontWeight.w400, fontSize: 17),
             ),
             Padding(
@@ -43,7 +45,7 @@ class _AddeventState extends State<Addevent> {
                   ),
                 )),
             Text(
-              'Date',
+              'Depratment',
               style: TextStyle(fontWeight: FontWeight.w400, fontSize: 17),
             ),
             Padding(
@@ -57,7 +59,7 @@ class _AddeventState extends State<Addevent> {
                   ),
                 )),
             Text(
-              'Time ',
+              'Register No',
               style: TextStyle(fontWeight: FontWeight.w400, fontSize: 17),
             ),
             Padding(
@@ -71,7 +73,7 @@ class _AddeventState extends State<Addevent> {
                   ),
                 )),
             Text(
-              'Location',
+              'Phone No',
               style: TextStyle(fontWeight: FontWeight.w400, fontSize: 17),
             ),
             Padding(
@@ -85,36 +87,53 @@ class _AddeventState extends State<Addevent> {
                   ),
                 )),
             Text(
-              'Description',
+              'Email',
               style: TextStyle(fontWeight: FontWeight.w400, fontSize: 17),
             ),
             Padding(
-                padding: const EdgeInsets.only(top: 8.0, bottom: 50),
-                child: Container(
-                  height: 130,
+                padding: const EdgeInsets.only(top: 8.0, bottom: 20),
+                child: SizedBox(
+                  height: 45,
                   width: 350,
-                  decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(10),
-                      border: Border.all()),
                   child: TextFormField(
-                    decoration: InputDecoration(
-                        border:
-                            UnderlineInputBorder(borderSide: BorderSide.none)),
+                    decoration:
+                        InputDecoration(enabledBorder: OutlineInputBorder()),
                   ),
                 )),
-            SizedBox(
-                height: 50,
-                width: 350,
-                child: FloatingActionButton(
-                  backgroundColor: const Color.fromARGB(255, 60, 97, 162),
-                  onPressed: () {
-                    Navigator.of(context).pop();
-                  },
-                  child: Text(
-                    'Submit',
-                    style: TextStyle(color: Colors.white, fontSize: 20),
+            Text(
+              'Password',
+              style: TextStyle(fontWeight: FontWeight.w400, fontSize: 17),
+            ),
+            Padding(
+                padding: const EdgeInsets.only(top: 8.0, bottom: 40),
+                child: SizedBox(
+                  height: 45,
+                  width: 350,
+                  child: TextFormField(
+                    decoration:
+                        InputDecoration(enabledBorder: OutlineInputBorder()),
                   ),
-                ))
+                )),
+            Padding(
+              padding: const EdgeInsets.only(left: 30.0),
+              child: SizedBox(
+                  height: 50,
+                  width: 300,
+                  child: FloatingActionButton(
+                    backgroundColor: const Color.fromARGB(255, 60, 97, 162),
+                    onPressed: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => Tabb(),
+                          ));
+                    },
+                    child: Text(
+                      'Submit',
+                      style: TextStyle(color: Colors.white, fontSize: 20),
+                    ),
+                  )),
+            )
           ],
         ),
       ),

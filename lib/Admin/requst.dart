@@ -1,6 +1,8 @@
 // ignore_for_file: prefer_const_constructors
 
+import 'package:event_project/Admin/Teacher.dart';
 import 'package:event_project/Admin/addnot.dart';
+import 'package:event_project/Admin/event2.dart';
 import 'package:flutter/material.dart';
 
 class Requst extends StatefulWidget {
@@ -16,184 +18,46 @@ class _RequstState extends State<Requst> {
     return DefaultTabController(
         length: 2,
         child: Scaffold(
-            appBar: AppBar(
-              toolbarHeight: 150,
-              title: Column(children: [
-                Padding(
-                  padding: const EdgeInsets.only(left: 50.0, top: 60),
-                  child: Text(
-                    'Request',
-                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 30),
-                  ),
-                ),
-                Padding(
-                  padding: const EdgeInsets.only(top: 20.0),
-                  child: TabBar(tabs: [
-                    Text(
-                      'Teacher',
-                      style: TextStyle(color: Colors.blueAccent, fontSize: 20),
-                    ),
-                    Text('Event',
-                        style:
-                            TextStyle(color: Colors.blueAccent, fontSize: 19))
-                  ]),
-                ),
-              ]),
-              actions: [
-                Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: IconButton(
-                        onPressed: () {
-                          Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) => Not(),
-                              ));
-                        },
-                        icon: Icon(
-                          Icons.notifications_active_outlined,
-                          size: 30,
-                        )))
-              ],
-            ),
-            body: Center(
-              child: Column(
-                children: [
-                  Padding(
-                    padding: const EdgeInsets.only(bottom: 10.0, top: 20),
-                    child: Container(
-                      height: 60,
-                      width: 350,
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(10),
-                          color: Color.fromARGB(255, 153, 187, 201)),
-                      child: ListTile(
-                        leading: CircleAvatar(
-                          backgroundImage: AssetImage('images/user.png'),
-                          backgroundColor: Colors.white,
-                        ),
-                        title: Text('Teacher Name'),
-                        subtitle: Text('Department'),
-                        trailing: Icon(
-                          Icons.check_circle_outline_outlined,
-                          color: Colors.green,
-                        ),
-                      ),
-                    ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.only(bottom: 10.0),
-                    child: Container(
-                      height: 60,
-                      width: 350,
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(10),
-                          color: Color.fromARGB(255, 153, 187, 201)),
-                      child: ListTile(
-                        leading: CircleAvatar(
-                          backgroundImage: AssetImage('images/user.png'),
-                          backgroundColor: Colors.white,
-                        ),
-                        title: Text('Teacher Name'),
-                        subtitle: Text('Department'),
-                        trailing: Icon(
-                          Icons.check_circle_outline_outlined,
-                          color: Colors.green,
-                        ),
-                      ),
-                    ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.only(bottom: 10.0),
-                    child: Container(
-                      height: 60,
-                      width: 350,
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(10),
-                          color: Color.fromARGB(255, 153, 187, 201)),
-                      child: ListTile(
-                        leading: CircleAvatar(
-                          backgroundImage: AssetImage('images/user.png'),
-                          backgroundColor: Colors.white,
-                        ),
-                        title: Text('Teacher Name'),
-                        subtitle: Text('Department'),
-                        trailing: Icon(
-                          Icons.check_circle_outline_outlined,
-                          color: Colors.green,
-                        ),
-                      ),
-                    ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.only(bottom: 10.0),
-                    child: Container(
-                      height: 60,
-                      width: 350,
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(10),
-                          color: Color.fromARGB(255, 153, 187, 201)),
-                      child: ListTile(
-                        leading: CircleAvatar(
-                          backgroundImage: AssetImage('images/user.png'),
-                          backgroundColor: Colors.white,
-                        ),
-                        title: Text('Teacher Name'),
-                        subtitle: Text('Department'),
-                        trailing: Icon(
-                          Icons.check_circle_outline_outlined,
-                          color: Colors.green,
-                        ),
-                      ),
-                    ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.only(bottom: 10.0),
-                    child: Container(
-                      height: 60,
-                      width: 350,
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(10),
-                          color: Color.fromARGB(255, 153, 187, 201)),
-                      child: ListTile(
-                        leading: CircleAvatar(
-                          backgroundImage: AssetImage('images/user.png'),
-                          backgroundColor: Colors.white,
-                        ),
-                        title: Text('Teacher Name'),
-                        subtitle: Text('Department'),
-                        trailing: Icon(
-                          Icons.check_circle_outline_outlined,
-                          color: Colors.green,
-                        ),
-                      ),
-                    ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.only(bottom: 10.0),
-                    child: Container(
-                      height: 60,
-                      width: 350,
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(10),
-                          color: Color.fromARGB(255, 153, 187, 201)),
-                      child: ListTile(
-                        leading: CircleAvatar(
-                          backgroundImage: AssetImage('images/user.png'),
-                          backgroundColor: Colors.white,
-                        ),
-                        title: Text('Teacher Name'),
-                        subtitle: Text('Department'),
-                        trailing: Icon(
-                          Icons.check_circle_outline_outlined,
-                          color: Colors.green,
-                        ),
-                      ),
-                    ),
-                  )
-                ],
+          appBar: AppBar(
+            title: Padding(
+              padding: const EdgeInsets.only(
+                left: 90,
               ),
-            )));
+              child: Text(
+                'Request',
+                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 25),
+              ),
+            ),
+            bottom: TabBar(
+                tabAlignment: TabAlignment.start,
+                isScrollable: true,
+                tabs: [
+                  Text(
+                    'Teacher',
+                    style: TextStyle(color: Colors.blueAccent, fontSize: 20),
+                  ),
+                  Text('Event',
+                      style: TextStyle(color: Colors.blueAccent, fontSize: 19))
+                ]),
+            actions: [
+              Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: IconButton(
+                      onPressed: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => Not(),
+                            ));
+                      },
+                      icon: Icon(
+                        Icons.notifications_active_outlined,
+                        size: 30,
+                      )))
+            ],
+          ),
+          body: TabBarView(children: [Teacher(), AdminEvent2()]),
+        ));
   }
 }
 

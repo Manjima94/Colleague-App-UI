@@ -117,25 +117,85 @@ class _AcceptState extends State<Accept> {
             'Anandu',
             style: TextStyle(fontSize: 17),
           ),
-          Text(
-            '\nDeparatment     :                         BCom',
-            style: TextStyle(fontSize: 17),
+          Padding(
+            padding: const EdgeInsets.only(top: 18.0),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: [
+                Text(
+                  'Department :',
+                  style: TextStyle(fontSize: 17),
+                ),
+                Text(
+                  'BCom',
+                  style: TextStyle(fontSize: 17),
+                )
+              ],
+            ),
           ),
-          Text(
-            '\nRequest Event   :               Holi Festival',
-            style: TextStyle(fontSize: 17),
+          Padding(
+            padding: const EdgeInsets.only(top: 18.0),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: [
+                Text(
+                  'Request Event :',
+                  style: TextStyle(fontSize: 17),
+                ),
+                Text(
+                  'Holi Festival',
+                  style: TextStyle(fontSize: 17),
+                )
+              ],
+            ),
           ),
-          Text(
-            '\nDate                    :               25/03/2024',
-            style: TextStyle(fontSize: 17),
+          Padding(
+            padding: const EdgeInsets.only(top: 18.0),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: [
+                Text(
+                  ' Date   :',
+                  style: TextStyle(fontSize: 17),
+                ),
+                Text(
+                  '25/05/2024',
+                  style: TextStyle(fontSize: 17),
+                )
+              ],
+            ),
           ),
-          Text(
-            '\nTime                    :                           10.00',
-            style: TextStyle(fontSize: 17),
+          Padding(
+            padding: const EdgeInsets.only(top: 18.0),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: [
+                Text(
+                  ' Time   :',
+                  style: TextStyle(fontSize: 17),
+                ),
+                Text(
+                  '10.00 AM',
+                  style: TextStyle(fontSize: 17),
+                )
+              ],
+            ),
           ),
-          Text(
-            '\nLocation             :               College Hall',
-            style: TextStyle(fontSize: 17),
+          Padding(
+            padding: const EdgeInsets.only(top: 18.0),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: [
+                Text(
+                  ' Location   :',
+                  style: TextStyle(fontSize: 17),
+                ),
+                Text(
+                  'College Hall',
+                  style: TextStyle(fontSize: 17),
+                )
+              ],
+            ),
           ),
           Padding(
             padding: const EdgeInsets.only(top: 50, right: 300),

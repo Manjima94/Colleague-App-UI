@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_constructors
 
-import 'package:event_project/signin.dart';
+
+import 'package:event_project/student/Succes.dart';
 import 'package:flutter/material.dart';
 
 class Account extends StatefulWidget {
@@ -323,7 +324,7 @@ class _FoodState extends State<Food> {
                         Navigator.push(
                             context,
                             MaterialPageRoute(
-                              builder: (context) => Success(),
+                              builder: (context) => Sucess(),
                             ));
                       },
                       child: Text(
@@ -333,60 +334,5 @@ class _FoodState extends State<Food> {
                     ))
               ],
             )));
-  }
-}
-
-class Success extends StatefulWidget {
-  const Success({super.key});
-
-  @override
-  State<Success> createState() => _SuccessState();
-}
-
-class _SuccessState extends State<Success> {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      body: Center(
-        child: Padding(
-          padding: const EdgeInsets.only(top: 180.0),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Image(image: AssetImage('images/check.png')),
-              Text(
-                'Thank You!',
-                style: TextStyle(
-                    color: Colors.green,
-                    fontSize: 40,
-                    fontWeight: FontWeight.w500),
-              ),
-              Text('Registration is successfull',
-                  style: TextStyle(fontSize: 30)),
-              Padding(
-                padding: const EdgeInsets.only(top: 200.0),
-                child: SizedBox(
-                    height: 50,
-                    width: 350,
-                    child: FloatingActionButton(
-                      backgroundColor: const Color.fromARGB(255, 60, 97, 162),
-                      onPressed: () {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => Signin(),
-                            ));
-                      },
-                      child: Text(
-                        'Done',
-                        style: TextStyle(color: Colors.white, fontSize: 20),
-                      ),
-                    )),
-              )
-            ],
-          ),
-        ),
-      ),
-    );
   }
 }

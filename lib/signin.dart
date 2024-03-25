@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
-import 'package:event_project/registration.dart';
+import 'package:event_project/student/registration.dart';
+
 import 'package:flutter/material.dart';
 
 class Signin extends StatefulWidget {
@@ -18,7 +19,12 @@ class _SigninState extends State<Signin> {
       children: [
         Padding(
           padding: const EdgeInsets.only(bottom: 50, left: 150),
-          child: SizedBox(height: 300, child: CircleAvatar(radius: 400)),
+          child: SizedBox(
+              height: 300,
+              child: CircleAvatar(
+                radius: 400,
+                backgroundColor: Colors.white,
+              )),
         ),
         Padding(
           padding: const EdgeInsets.only(left: 18.0),

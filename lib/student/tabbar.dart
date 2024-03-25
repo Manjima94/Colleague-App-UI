@@ -1,7 +1,8 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
-import 'package:event_project/student/req.dart';
-import 'package:event_project/student/actions.dart';
+import 'package:event_project/student/previous.dart';
+import 'package:event_project/student/upcoming.dart';
+
 import 'package:flutter/material.dart';
 
 class Tabb extends StatefulWidget {
@@ -22,7 +23,7 @@ class _TabbState extends State<Tabb> {
               Column(
                 children: [
                   Expanded(
-                    child: TabBarView(children: [Upcome(), Previus()]),
+                    child: TabBarView(children: [Upcome(), Previous()]),
                   ),
                 ],
               ),
@@ -43,7 +44,7 @@ class _TabbState extends State<Tabb> {
                         indicatorPadding: EdgeInsets.only(
                             top: 10, left: 10, right: 10, bottom: 10),
                         indicator: BoxDecoration(
-                            color: Colors.blue,
+                            color: const Color.fromARGB(255, 60, 97, 162),
                             borderRadius: BorderRadius.circular(30)),
                         tabs: [
                           Text(
@@ -61,57 +62,5 @@ class _TabbState extends State<Tabb> {
             ],
           ),
         ));
-  }
-}
-
-class Upcome extends StatefulWidget {
-  const Upcome({super.key});
-
-  @override
-  State<Upcome> createState() => _UpcomeState();
-}
-
-class _UpcomeState extends State<Upcome> {
-  @override
-  Widget build(BuildContext context) {
-    return DefaultTabController(
-      length: 2,
-      child: Scaffold(
-        appBar: AppBar(
-          toolbarHeight: 100,
-          title: Padding(
-            padding: const EdgeInsets.only(left: 100.0),
-            child: Text(
-              'Event',
-              style: TextStyle(fontWeight: FontWeight.bold),
-            ),
-          ),
-          actions: [
-            Padding(
-              padding: const EdgeInsets.only(right: 28.0),
-              child: Icon((Icons.person_outline), size: 30),
-            ),
-            Padding(
-              padding: const EdgeInsets.only(right: 18.0),
-              child: Icon(Icons.notifications_active_outlined),
-            )
-          ],
-        ),
-      ),
-    );
-  }
-}
-
-class Previus extends StatefulWidget {
-  const Previus({super.key});
-
-  @override
-  State<Previus> createState() => _PreviusState();
-}
-
-class _PreviusState extends State<Previus> {
-  @override
-  Widget build(BuildContext context) {
-    return const Placeholder();
   }
 }

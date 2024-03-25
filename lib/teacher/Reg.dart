@@ -1,6 +1,6 @@
 // ignore_for_file: prefer_const_constructors
 
-import 'package:event_project/student/tabbar.dart';
+import 'package:event_project/teacher/tabbar2.dart';
 import 'package:flutter/material.dart';
 
 class Register extends StatefulWidget {
@@ -58,20 +58,6 @@ class _RegisterState extends State<Register> {
                   ),
                 )),
             Text(
-              'Register No',
-              style: TextStyle(fontWeight: FontWeight.w400, fontSize: 17),
-            ),
-            Padding(
-                padding: const EdgeInsets.only(top: 8.0, bottom: 20),
-                child: SizedBox(
-                  height: 45,
-                  width: 350,
-                  child: TextFormField(
-                    decoration:
-                        InputDecoration(enabledBorder: OutlineInputBorder()),
-                  ),
-                )),
-            Text(
               'Phone No',
               style: TextStyle(fontWeight: FontWeight.w400, fontSize: 17),
             ),
@@ -114,7 +100,7 @@ class _RegisterState extends State<Register> {
                   ),
                 )),
             Padding(
-              padding: const EdgeInsets.only(left: 30.0),
+              padding: const EdgeInsets.only(left: 40, top: 80),
               child: SizedBox(
                   height: 50,
                   width: 300,
@@ -124,7 +110,7 @@ class _RegisterState extends State<Register> {
                       Navigator.push(
                           context,
                           MaterialPageRoute(
-                            builder: (context) => Tabb(),
+                            builder: (context) => Evnt(),
                           ));
                     },
                     child: Text(

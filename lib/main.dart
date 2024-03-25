@@ -2,7 +2,7 @@
 
 import 'package:event_project/Admin/login.dart';
 import 'package:event_project/signin.dart';
-import 'package:event_project/teacher/stdlist.dart';
+import 'package:event_project/teacher/Reg.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -58,7 +58,7 @@ class _MainState extends State<Main> {
                 Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => Studlist(),
+                      builder: (context) => Register(),
                     ));
               },
               child: Text('teacher'),

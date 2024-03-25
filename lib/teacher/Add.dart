@@ -1,24 +1,22 @@
-// ignore_for_file: prefer_const_constructors
-
 import 'package:flutter/material.dart';
 
-class Addevent extends StatefulWidget {
-  const Addevent({super.key});
+class Add extends StatefulWidget {
+  const Add({super.key});
 
   @override
-  State<Addevent> createState() => _AddeventState();
+  State<Add> createState() => _AddState();
 }
 
-class _AddeventState extends State<Addevent> {
+class _AddState extends State<Add> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         toolbarHeight: 100,
         title: Padding(
-          padding: const EdgeInsets.only(left: 70.0),
+          padding: const EdgeInsets.only(left: 110.0),
           child: Text(
-            ' Add Event ',
+            'Event',
             style: TextStyle(fontWeight: FontWeight.bold),
           ),
         ),
@@ -29,7 +27,7 @@ class _AddeventState extends State<Addevent> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              ' Event Name',
+              'Event Name',
               style: TextStyle(fontWeight: FontWeight.w400, fontSize: 17),
             ),
             Padding(
