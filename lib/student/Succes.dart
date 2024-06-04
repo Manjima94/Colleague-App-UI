@@ -36,7 +36,9 @@ class _SucessState extends State<Sucess> {
                     width: 350,
                     child: FloatingActionButton(
                       backgroundColor: const Color.fromARGB(255, 60, 97, 162),
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.of(context).pop();
+                      },
                       child: Text(
                         'Done',
                         style: TextStyle(color: Colors.white, fontSize: 20),

@@ -30,73 +30,119 @@ class _StddetailsState extends State<Stddetails> {
           Column(
             children: [
               Center(child: Image.asset('images/user.png')),
-              Text(
-                'Name',
-                style: TextStyle(fontSize: 17),
-              ),
               Padding(
-                padding: const EdgeInsets.only(top: 40),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: [
-                    Text(
-                      'Register no :',
-                      style: TextStyle(fontSize: 17),
-                    ),
-                    Text(
-                      '0000',
-                      style: TextStyle(fontSize: 17),
-                    )
-                  ],
+                padding: const EdgeInsets.only(bottom: 20, top: 10),
+                child: Text(
+                  'Name',
+                  style: TextStyle(fontSize: 20),
                 ),
               ),
-              Padding(
-                padding: const EdgeInsets.only(top: 40),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: [
-                    Text(
-                      'Department :',
-                      style: TextStyle(fontSize: 17),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.only(bottom: 40, top: 30),
+                        child: Text(
+                          ' Register no',
+                          style: TextStyle(fontSize: 20),
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.only(bottom: 40),
+                        child: Text(
+                          ' Department',
+                          style: TextStyle(fontSize: 20),
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.only(bottom: 40),
+                        child: Text(
+                          ' Phone no',
+                          style: TextStyle(fontSize: 20),
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.only(bottom: 40),
+                        child: Text(
+                          '  Email',
+                          style: TextStyle(fontSize: 20),
+                        ),
+                      ),
+                    ],
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(left: 10),
+                    child: Column(
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.only(bottom: 40, top: 30),
+                          child: Text(
+                            ':',
+                            style: TextStyle(
+                                fontWeight: FontWeight.bold, fontSize: 20),
+                          ),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.only(bottom: 40),
+                          child: Text(
+                            ':',
+                            style: TextStyle(
+                                fontWeight: FontWeight.bold, fontSize: 20),
+                          ),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.only(bottom: 40),
+                          child: Text(
+                            ':',
+                            style: TextStyle(
+                                fontWeight: FontWeight.bold, fontSize: 20),
+                          ),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.only(bottom: 40),
+                          child: Text(
+                            ':',
+                            style: TextStyle(
+                                fontWeight: FontWeight.bold, fontSize: 20),
+                          ),
+                        ),
+                      ],
                     ),
-                    Text(
-                      ' BCom',
-                      style: TextStyle(fontSize: 17),
-                    )
-                  ],
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.only(top: 40),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: [
-                    Text(
-                      ' Phone no   :',
-                      style: TextStyle(fontSize: 17),
+                  ),
+                  Column(crossAxisAlignment: CrossAxisAlignment.end, children: [
+                    Padding(
+                      padding: const EdgeInsets.only(bottom: 40, top: 30),
+                      child: Text(
+                        '12345',
+                        style: TextStyle(fontSize: 20),
+                      ),
                     ),
-                    Text(
-                      '25052024',
-                      style: TextStyle(fontSize: 17),
-                    )
-                  ],
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.only(top: 40),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: [
-                    Text(
-                      '   Email :',
-                      style: TextStyle(fontSize: 17),
+                    Padding(
+                      padding: const EdgeInsets.only(bottom: 40),
+                      child: Text(
+                        ' BCom',
+                        style: TextStyle(fontSize: 20),
+                      ),
                     ),
-                    Text(
-                      'name@gamil.com',
-                      style: TextStyle(fontSize: 17),
-                    )
-                  ],
-                ),
+                    Padding(
+                      padding: const EdgeInsets.only(bottom: 40),
+                      child: Text(
+                        '987654321',
+                        style: TextStyle(fontSize: 20),
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(bottom: 40),
+                      child: Text(
+                        'name@gmail.com',
+                        style: TextStyle(fontSize: 20),
+                      ),
+                    ),
+                  ])
+                ],
               ),
             ],
           ),

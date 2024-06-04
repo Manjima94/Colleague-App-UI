@@ -53,180 +53,231 @@ class _StudlistState extends State<Studlist> {
                   )))
         ],
       ),
-      body: Center(
-        child: Padding(
-          padding: const EdgeInsets.only(top: 20.0),
-          child: Column(
-            children: [
-              Padding(
-                padding: EdgeInsets.only(bottom: 10.0),
-                child: SizedBox(
-                    height: 60,
-                    width: 350,
-                    child: FloatingActionButton(
-                      backgroundColor: Color.fromARGB(255, 215, 234, 243),
-                      onPressed: () {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => Stddetails(),
-                            ));
-                      },
-                      child: ListTile(
-                        leading: CircleAvatar(
-                          backgroundImage: AssetImage('images/user.png'),
-                          backgroundColor: Colors.white,
+      body: SingleChildScrollView(
+        scrollDirection: Axis.vertical,
+        child: Center(
+          child: Padding(
+            padding: const EdgeInsets.only(top: 20.0),
+            child: Column(
+              children: [
+                Padding(
+                  padding: EdgeInsets.only(bottom: 10.0),
+                  child: SizedBox(
+                      height: 60,
+                      width: 350,
+                      child: FloatingActionButton(
+                        backgroundColor: Color.fromARGB(255, 215, 234, 243),
+                        onPressed: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => Stddetails(),
+                              ));
+                        },
+                        child: ListTile(
+                          leading: CircleAvatar(
+                            backgroundImage: AssetImage('images/user.png'),
+                            backgroundColor: Colors.white,
+                          ),
+                          title: Text('Student Name'),
+                          subtitle: Text('Department'),
                         ),
-                        title: Text('Student Name'),
-                        subtitle: Text('Department'),
-                      ),
-                    )),
-              ),
-              Padding(
-                padding: const EdgeInsets.only(bottom: 10.0),
-                child: SizedBox(
-                    height: 60,
-                    width: 350,
-                    child: FloatingActionButton(
-                      backgroundColor: Color.fromARGB(255, 215, 234, 243),
-                      onPressed: () {},
-                      child: ListTile(
-                        leading: CircleAvatar(
-                          backgroundImage: AssetImage('images/user.png'),
-                          backgroundColor: Colors.white,
+                      )),
+                ),
+                Padding(
+                  padding: EdgeInsets.only(bottom: 10.0),
+                  child: SizedBox(
+                      height: 60,
+                      width: 350,
+                      child: FloatingActionButton(
+                        backgroundColor: Color.fromARGB(255, 215, 234, 243),
+                        onPressed: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => Stddetails(),
+                              ));
+                        },
+                        child: ListTile(
+                          leading: CircleAvatar(
+                            backgroundImage: AssetImage('images/user.png'),
+                            backgroundColor: Colors.white,
+                          ),
+                          title: Text('Student Name'),
+                          subtitle: Text('Department'),
                         ),
-                        title: Text(' Name'),
-                        subtitle: Text('Department'),
-                      ),
-                    )),
-              ),
-              Padding(
-                padding: const EdgeInsets.only(bottom: 10.0),
-                child: SizedBox(
-                    height: 60,
-                    width: 350,
-                    child: FloatingActionButton(
-                      backgroundColor: Color.fromARGB(255, 215, 234, 243),
-                      onPressed: () {},
-                      child: ListTile(
-                        leading: CircleAvatar(
-                          backgroundImage: AssetImage('images/user.png'),
-                          backgroundColor: Colors.white,
+                      )),
+                ),
+                Padding(
+                  padding: EdgeInsets.only(bottom: 10.0),
+                  child: SizedBox(
+                      height: 60,
+                      width: 350,
+                      child: FloatingActionButton(
+                        backgroundColor: Color.fromARGB(255, 215, 234, 243),
+                        onPressed: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => Stddetails(),
+                              ));
+                        },
+                        child: ListTile(
+                          leading: CircleAvatar(
+                            backgroundImage: AssetImage('images/user.png'),
+                            backgroundColor: Colors.white,
+                          ),
+                          title: Text('Student Name'),
+                          subtitle: Text('Department'),
                         ),
-                        title: Text(' Name'),
-                        subtitle: Text('Department'),
-                      ),
-                    )),
-              ),
-              Padding(
-                padding: const EdgeInsets.only(bottom: 10.0),
-                child: SizedBox(
-                    height: 60,
-                    width: 350,
-                    child: FloatingActionButton(
-                      backgroundColor: Color.fromARGB(255, 215, 234, 243),
-                      onPressed: () {},
-                      child: ListTile(
-                        leading: CircleAvatar(
-                          backgroundImage: AssetImage('images/user.png'),
-                          backgroundColor: Colors.white,
+                      )),
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(bottom: 10.0),
+                  child: SizedBox(
+                      height: 60,
+                      width: 350,
+                      child: FloatingActionButton(
+                        backgroundColor: Color.fromARGB(255, 215, 234, 243),
+                        onPressed: () {},
+                        child: ListTile(
+                          leading: CircleAvatar(
+                            backgroundImage: AssetImage('images/user.png'),
+                            backgroundColor: Colors.white,
+                          ),
+                          title: Text(' Name'),
+                          subtitle: Text('Department'),
                         ),
-                        title: Text(' Name'),
-                        subtitle: Text('Department'),
-                      ),
-                    )),
-              ),
-              Padding(
-                padding: const EdgeInsets.only(bottom: 10.0),
-                child: SizedBox(
-                    height: 60,
-                    width: 350,
-                    child: FloatingActionButton(
-                      backgroundColor: Color.fromARGB(255, 215, 234, 243),
-                      onPressed: () {},
-                      child: ListTile(
-                        leading: CircleAvatar(
-                          backgroundImage: AssetImage('images/user.png'),
-                          backgroundColor: Colors.white,
+                      )),
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(bottom: 10.0),
+                  child: SizedBox(
+                      height: 60,
+                      width: 350,
+                      child: FloatingActionButton(
+                        backgroundColor: Color.fromARGB(255, 215, 234, 243),
+                        onPressed: () {},
+                        child: ListTile(
+                          leading: CircleAvatar(
+                            backgroundImage: AssetImage('images/user.png'),
+                            backgroundColor: Colors.white,
+                          ),
+                          title: Text(' Name'),
+                          subtitle: Text('Department'),
                         ),
-                        title: Text(' Name'),
-                        subtitle: Text('Department'),
-                      ),
-                    )),
-              ),
-              Padding(
-                padding: const EdgeInsets.only(bottom: 10.0),
-                child: SizedBox(
-                    height: 60,
-                    width: 350,
-                    child: FloatingActionButton(
-                      backgroundColor: Color.fromARGB(255, 215, 234, 243),
-                      onPressed: () {},
-                      child: ListTile(
-                        leading: CircleAvatar(
-                          backgroundImage: AssetImage('images/user.png'),
-                          backgroundColor: Colors.white,
+                      )),
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(bottom: 10.0),
+                  child: SizedBox(
+                      height: 60,
+                      width: 350,
+                      child: FloatingActionButton(
+                        backgroundColor: Color.fromARGB(255, 215, 234, 243),
+                        onPressed: () {},
+                        child: ListTile(
+                          leading: CircleAvatar(
+                            backgroundImage: AssetImage('images/user.png'),
+                            backgroundColor: Colors.white,
+                          ),
+                          title: Text(' Name'),
+                          subtitle: Text('Department'),
                         ),
-                        title: Text(' Name'),
-                        subtitle: Text('Department'),
-                      ),
-                    )),
-              ),
-              Padding(
-                padding: const EdgeInsets.only(bottom: 10.0),
-                child: SizedBox(
-                    height: 60,
-                    width: 350,
-                    child: FloatingActionButton(
-                      backgroundColor: Color.fromARGB(255, 215, 234, 243),
-                      onPressed: () {},
-                      child: ListTile(
-                        leading: CircleAvatar(
-                          backgroundImage: AssetImage('images/user.png'),
-                          backgroundColor: Colors.white,
+                      )),
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(bottom: 10.0),
+                  child: SizedBox(
+                      height: 60,
+                      width: 350,
+                      child: FloatingActionButton(
+                        backgroundColor: Color.fromARGB(255, 215, 234, 243),
+                        onPressed: () {},
+                        child: ListTile(
+                          leading: CircleAvatar(
+                            backgroundImage: AssetImage('images/user.png'),
+                            backgroundColor: Colors.white,
+                          ),
+                          title: Text(' Name'),
+                          subtitle: Text('Department'),
                         ),
-                        title: Text(' Name'),
-                        subtitle: Text('Department'),
-                      ),
-                    )),
-              ),
-              Padding(
-                padding: const EdgeInsets.only(bottom: 10.0),
-                child: SizedBox(
-                    height: 60,
-                    width: 350,
-                    child: FloatingActionButton(
-                      backgroundColor: Color.fromARGB(255, 215, 234, 243),
-                      onPressed: () {},
-                      child: ListTile(
-                        leading: CircleAvatar(
-                          backgroundImage: AssetImage('images/user.png'),
-                          backgroundColor: Colors.white,
+                      )),
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(bottom: 10.0),
+                  child: SizedBox(
+                      height: 60,
+                      width: 350,
+                      child: FloatingActionButton(
+                        backgroundColor: Color.fromARGB(255, 215, 234, 243),
+                        onPressed: () {},
+                        child: ListTile(
+                          leading: CircleAvatar(
+                            backgroundImage: AssetImage('images/user.png'),
+                            backgroundColor: Colors.white,
+                          ),
+                          title: Text(' Name'),
+                          subtitle: Text('Department'),
                         ),
-                        title: Text(' Name'),
-                        subtitle: Text('Department'),
-                      ),
-                    )),
-              ),
-              Padding(
-                padding: const EdgeInsets.only(bottom: 10.0),
-                child: SizedBox(
-                    height: 60,
-                    width: 350,
-                    child: FloatingActionButton(
-                      backgroundColor: Color.fromARGB(255, 215, 234, 243),
-                      onPressed: () {},
-                      child: ListTile(
-                        leading: CircleAvatar(
-                          backgroundImage: AssetImage('images/user.png'),
-                          backgroundColor: Colors.white,
+                      )),
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(bottom: 10.0),
+                  child: SizedBox(
+                      height: 60,
+                      width: 350,
+                      child: FloatingActionButton(
+                        backgroundColor: Color.fromARGB(255, 215, 234, 243),
+                        onPressed: () {},
+                        child: ListTile(
+                          leading: CircleAvatar(
+                            backgroundImage: AssetImage('images/user.png'),
+                            backgroundColor: Colors.white,
+                          ),
+                          title: Text(' Name'),
+                          subtitle: Text('Department'),
                         ),
-                        title: Text(' Name'),
-                        subtitle: Text('Department'),
-                      ),
-                    )),
-              ),
-            ],
+                      )),
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(bottom: 10.0),
+                  child: SizedBox(
+                      height: 60,
+                      width: 350,
+                      child: FloatingActionButton(
+                        backgroundColor: Color.fromARGB(255, 215, 234, 243),
+                        onPressed: () {},
+                        child: ListTile(
+                          leading: CircleAvatar(
+                            backgroundImage: AssetImage('images/user.png'),
+                            backgroundColor: Colors.white,
+                          ),
+                          title: Text(' Name'),
+                          subtitle: Text('Department'),
+                        ),
+                      )),
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(bottom: 10.0),
+                  child: SizedBox(
+                      height: 60,
+                      width: 350,
+                      child: FloatingActionButton(
+                        backgroundColor: Color.fromARGB(255, 215, 234, 243),
+                        onPressed: () {},
+                        child: ListTile(
+                          leading: CircleAvatar(
+                            backgroundImage: AssetImage('images/user.png'),
+                            backgroundColor: Colors.white,
+                          ),
+                          title: Text(' Name'),
+                          subtitle: Text('Department'),
+                        ),
+                      )),
+                ),
+              ],
+            ),
           ),
         ),
       ),

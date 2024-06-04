@@ -1,6 +1,9 @@
 // ignore_for_file: prefer_const_constructors
 
+import 'dart:io';
+
 import 'package:flutter/material.dart';
+import 'package:image_picker/image_picker.dart';
 
 class Photo extends StatefulWidget {
   const Photo({super.key});
@@ -19,13 +22,10 @@ class _PhotoState extends State<Photo> {
           Row(
             children: [
               Container(
-                
                 height: 100,
                 width: 100,
                 child: Image(
-                  
                     image: NetworkImage(
-                      
                         'https://www.medianews4u.com/wp-content/uploads/2022/09/Heartwarming-Onam-campaigns-from-brands-spread-festive-delight.jpg')),
               ),
               SizedBox(
@@ -70,6 +70,8 @@ class Addphoto extends StatefulWidget {
 }
 
 class _AddphotoState extends State<Addphoto> {
+  XFile? pick;
+  File? image;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -91,12 +93,27 @@ class _AddphotoState extends State<Addphoto> {
               'Photo',
               style: TextStyle(fontSize: 20),
             ),
-            Container(
-              height: 300,
-              width: 350,
-              decoration: BoxDecoration(
-                  border: Border.all(), borderRadius: BorderRadius.circular(7)),
-              child: Image(image: AssetImage('images/addimage.png')),
+            InkWell(
+              onTap: () async {
+                ImagePicker picked = ImagePicker();
+                pick = await picked.pickImage(source: ImageSource.gallery);
+                setState(() {
+                  image = File(pick!.path);
+                });
+              },
+              child: Container(
+                height: 300,
+                width: 350,
+                decoration: BoxDecoration(
+                    border: Border.all(),
+                    borderRadius: BorderRadius.circular(7)),
+                child: image == null
+                    ? Image.asset("images/addimage.png")
+                    : Image.file(
+                        image!,
+                        fit: BoxFit.cover,
+                      ),
+              ),
             ),
             Padding(
               padding: const EdgeInsets.only(top: 18.0),

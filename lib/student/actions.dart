@@ -1,6 +1,5 @@
 // ignore_for_file: prefer_const_constructors
 
-
 import 'package:event_project/student/Succes.dart';
 import 'package:flutter/material.dart';
 
@@ -105,7 +104,9 @@ class _AccountState extends State<Account> {
                   width: 350,
                   child: FloatingActionButton(
                     backgroundColor: const Color.fromARGB(255, 60, 97, 162),
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.of(context).pop();
+                    },
                     child: Text(
                       'Submit',
                       style: TextStyle(color: Colors.white, fontSize: 20),
@@ -139,21 +140,25 @@ class _NotificatState extends State<Notificat> {
         body: Padding(
           padding: const EdgeInsets.all(18.0),
           child: Container(
-            height: 200,
+            height: 150,
             width: 350,
             decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(10),
                 color: Color.fromARGB(255, 167, 189, 199)),
-            child: Column(
-              children: [
-                Text(
-                  'Onam',
-                  style: TextStyle(
-                      color: Color.fromARGB(255, 17, 113, 157), fontSize: 15),
-                ),
-                Text(
-                    '"We are delighted to announce the upcoming Onam Program, a celebration of joy, culture, and togetherness! The college principal has approved the event, and we cant wait to make it a memorable occasion for all.')
-              ],
+            child: Padding(
+              padding: const EdgeInsets.only(left: 20),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    'Onam',
+                    style: TextStyle(
+                        color: Color.fromARGB(255, 17, 113, 157), fontSize: 20),
+                  ),
+                  Text(
+                      '"We are delighted to announce the upcoming Onam Program, a celebration of joy, culture, and togetherness! The college principal has approved the event, and we cant wait to make it a memorable occasion for all.')
+                ],
+              ),
             ),
           ),
         ));
@@ -181,158 +186,259 @@ class _FoodState extends State<Food> {
             ),
           ),
         ),
-        body: Padding(
-            padding: const EdgeInsets.all(18.0),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
+        body: Stack(
+          alignment: Alignment.bottomCenter,
+          children: [
+            ListView(
               children: [
-                Container(
-                  height: 130,
-                  width: 350,
-                  decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(10),
-                      color: Color.fromARGB(255, 167, 189, 199)),
-                  child: Column(children: [
-                    Text(
-                      'Food Festival\n',
-                      style: TextStyle(
-                          color: Color.fromARGB(255, 13, 81, 113),
-                          fontSize: 17),
-                    ),
-                    Text(
-                        'Date        : 03/04/2024\nTime        : 3.00 PM\nLocation : college Ground'),
-                  ]),
-                ),
-                Text(
-                  '\nParticipants',
-                  style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-                ),
                 Padding(
-                  padding: const EdgeInsets.only(bottom: 10.0),
-                  child: Container(
-                    height: 60,
-                    width: 350,
-                    decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(10),
-                        color: Color.fromARGB(255, 153, 187, 201)),
-                    child: ListTile(
-                      leading: CircleAvatar(
-                        backgroundImage: AssetImage('images/user.png'),
-                        backgroundColor: Colors.white,
-                      ),
-                      title: Text('Student Name'),
-                      subtitle: Text('Department'),
-                    ),
-                  ),
-                ),
-                Padding(
-                  padding: const EdgeInsets.only(bottom: 10.0),
-                  child: Container(
-                    height: 60,
-                    width: 350,
-                    decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(10),
-                        color: Color.fromARGB(255, 153, 187, 201)),
-                    child: ListTile(
-                      leading: CircleAvatar(
-                        backgroundImage: AssetImage('images/user.png'),
-                        backgroundColor: Colors.white,
-                      ),
-                      title: Text('Student Name'),
-                      subtitle: Text('Department'),
-                    ),
-                  ),
-                ),
-                Padding(
-                  padding: const EdgeInsets.only(bottom: 10.0),
-                  child: Container(
-                    height: 60,
-                    width: 350,
-                    decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(10),
-                        color: Color.fromARGB(255, 153, 187, 201)),
-                    child: ListTile(
-                      leading: CircleAvatar(
-                        backgroundImage: AssetImage('images/user.png'),
-                        backgroundColor: Colors.white,
-                      ),
-                      title: Text('Student Name'),
-                      subtitle: Text('Department'),
-                    ),
-                  ),
-                ),
-                Padding(
-                  padding: const EdgeInsets.only(bottom: 10.0),
-                  child: Container(
-                    height: 60,
-                    width: 350,
-                    decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(10),
-                        color: Color.fromARGB(255, 153, 187, 201)),
-                    child: ListTile(
-                      leading: CircleAvatar(
-                        backgroundImage: AssetImage('images/user.png'),
-                        backgroundColor: Colors.white,
-                      ),
-                      title: Text('Student Name'),
-                      subtitle: Text('Department'),
-                    ),
-                  ),
-                ),
-                Padding(
-                  padding: const EdgeInsets.only(bottom: 10.0),
-                  child: Container(
-                    height: 60,
-                    width: 350,
-                    decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(10),
-                        color: Color.fromARGB(255, 153, 187, 201)),
-                    child: ListTile(
-                      leading: CircleAvatar(
-                        backgroundImage: AssetImage('images/user.png'),
-                        backgroundColor: Colors.white,
-                      ),
-                      title: Text('Student Name'),
-                      subtitle: Text('Department'),
-                    ),
-                  ),
-                ),
-                Padding(
-                  padding: const EdgeInsets.only(bottom: 20.0),
-                  child: Container(
-                    height: 60,
-                    width: 350,
-                    decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(10),
-                        color: Color.fromARGB(255, 153, 187, 201)),
-                    child: ListTile(
-                      leading: CircleAvatar(
-                        backgroundImage: AssetImage('images/user.png'),
-                        backgroundColor: Colors.white,
-                      ),
-                      title: Text('Student Name'),
-                      subtitle: Text('Department'),
-                    ),
-                  ),
-                ),
-                SizedBox(
-                    height: 50,
-                    width: 350,
-                    child: FloatingActionButton(
-                      backgroundColor: const Color.fromARGB(255, 60, 97, 162),
-                      onPressed: () {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => Sucess(),
-                            ));
-                      },
-                      child: Text(
-                        'Register',
-                        style: TextStyle(color: Colors.white, fontSize: 20),
-                      ),
-                    ))
+                    padding: const EdgeInsets.only(left: 30),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Container(
+                            height: 130,
+                            width: 350,
+                            decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(10),
+                                color: Color.fromARGB(255, 167, 189, 199)),
+                            child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Padding(
+                                    padding: const EdgeInsets.all(8.0),
+                                    child: Text(
+                                      '  Food Festival',
+                                      style: TextStyle(
+                                          color:
+                                              Color.fromARGB(255, 11, 68, 148),
+                                          fontSize: 19),
+                                    ),
+                                  ),
+                                  Padding(
+                                      padding: const EdgeInsets.only(
+                                          top: 8.0, left: 20),
+                                      child: Row(
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.start,
+                                        children: [
+                                          Column(
+                                            crossAxisAlignment:
+                                                CrossAxisAlignment.start,
+                                            children: [
+                                              Text(
+                                                ' Date',
+                                                style: TextStyle(fontSize: 17),
+                                              ),
+                                              Text(
+                                                ' Time',
+                                                style: TextStyle(fontSize: 17),
+                                              ),
+                                              Text(
+                                                ' Location',
+                                                style: TextStyle(fontSize: 17),
+                                              ),
+                                            ],
+                                          ),
+                                          Padding(
+                                            padding:
+                                                const EdgeInsets.only(left: 10),
+                                            child: Column(
+                                              children: [
+                                                Text(
+                                                  ':',
+                                                  style: TextStyle(
+                                                      fontWeight:
+                                                          FontWeight.bold,
+                                                      fontSize: 17),
+                                                ),
+                                                Text(
+                                                  ':',
+                                                  style: TextStyle(
+                                                      fontWeight:
+                                                          FontWeight.bold,
+                                                      fontSize: 17),
+                                                ),
+                                                Text(
+                                                  ':',
+                                                  style: TextStyle(
+                                                      fontWeight:
+                                                          FontWeight.bold,
+                                                      fontSize: 17),
+                                                ),
+                                              ],
+                                            ),
+                                          ),
+                                          Padding(
+                                            padding: const EdgeInsets.only(
+                                              left: 20,
+                                            ),
+                                            child: Column(
+                                              crossAxisAlignment:
+                                                  CrossAxisAlignment.end,
+                                              children: [
+                                                Text(
+                                                  ' 20/04/2024',
+                                                  style:
+                                                      TextStyle(fontSize: 17),
+                                                ),
+                                                Text(
+                                                  ' 10.00 AM',
+                                                  style:
+                                                      TextStyle(fontSize: 17),
+                                                ),
+                                                Text(
+                                                  ' College Hall',
+                                                  style:
+                                                      TextStyle(fontSize: 17),
+                                                ),
+                                              ],
+                                            ),
+                                          )
+                                        ],
+                                      ))
+                                ])),
+                        Padding(
+                          padding: const EdgeInsets.only(top: 40, bottom: 10),
+                          child: Text(
+                            'Participants',
+                            style: TextStyle(
+                                fontSize: 20, fontWeight: FontWeight.bold),
+                          ),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.only(bottom: 10.0),
+                          child: Container(
+                            height: 60,
+                            width: 350,
+                            decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(10),
+                                color: Color.fromARGB(255, 153, 187, 201)),
+                            child: ListTile(
+                              leading: CircleAvatar(
+                                backgroundImage: AssetImage('images/user.png'),
+                                backgroundColor: Colors.white,
+                              ),
+                              title: Text('Student Name'),
+                              subtitle: Text('Department'),
+                            ),
+                          ),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.only(bottom: 10.0),
+                          child: Container(
+                            height: 60,
+                            width: 350,
+                            decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(10),
+                                color: Color.fromARGB(255, 153, 187, 201)),
+                            child: ListTile(
+                              leading: CircleAvatar(
+                                backgroundImage: AssetImage('images/user.png'),
+                                backgroundColor: Colors.white,
+                              ),
+                              title: Text('Student Name'),
+                              subtitle: Text('Department'),
+                            ),
+                          ),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.only(bottom: 10.0),
+                          child: Container(
+                            height: 60,
+                            width: 350,
+                            decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(10),
+                                color: Color.fromARGB(255, 153, 187, 201)),
+                            child: ListTile(
+                              leading: CircleAvatar(
+                                backgroundImage: AssetImage('images/user.png'),
+                                backgroundColor: Colors.white,
+                              ),
+                              title: Text('Student Name'),
+                              subtitle: Text('Department'),
+                            ),
+                          ),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.only(bottom: 10.0),
+                          child: Container(
+                            height: 60,
+                            width: 350,
+                            decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(10),
+                                color: Color.fromARGB(255, 153, 187, 201)),
+                            child: ListTile(
+                              leading: CircleAvatar(
+                                backgroundImage: AssetImage('images/user.png'),
+                                backgroundColor: Colors.white,
+                              ),
+                              title: Text('Student Name'),
+                              subtitle: Text('Department'),
+                            ),
+                          ),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.only(bottom: 10.0),
+                          child: Container(
+                            height: 60,
+                            width: 350,
+                            decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(10),
+                                color: Color.fromARGB(255, 153, 187, 201)),
+                            child: ListTile(
+                              leading: CircleAvatar(
+                                backgroundImage: AssetImage('images/user.png'),
+                                backgroundColor: Colors.white,
+                              ),
+                              title: Text('Student Name'),
+                              subtitle: Text('Department'),
+                            ),
+                          ),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.only(bottom: 20.0),
+                          child: Container(
+                            height: 60,
+                            width: 350,
+                            decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(10),
+                                color: Color.fromARGB(255, 153, 187, 201)),
+                            child: ListTile(
+                              leading: CircleAvatar(
+                                backgroundImage: AssetImage('images/user.png'),
+                                backgroundColor: Colors.white,
+                              ),
+                              title: Text('Student Name'),
+                              subtitle: Text('Department'),
+                            ),
+                          ),
+                        ),
+                      ],
+                    )),
               ],
-            )));
+            ),
+            Padding(
+              padding: const EdgeInsets.only(bottom: 20),
+              child: SizedBox(
+                  height: 50,
+                  width: 350,
+                  child: FloatingActionButton(
+                    backgroundColor: const Color.fromARGB(255, 60, 97, 162),
+                    onPressed: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => Sucess(),
+                          ));
+                    },
+                    child: Text(
+                      'Register',
+                      style: TextStyle(color: Colors.white, fontSize: 20),
+                    ),
+                  )),
+            )
+          ],
+        ));
   }
 }

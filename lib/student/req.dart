@@ -14,7 +14,7 @@ class _RequestState extends State<Request> {
   Widget build(BuildContext context) {
     return Scaffold(
         body: Padding(
-      padding: const EdgeInsets.all(18.0),
+      padding: const EdgeInsets.all(28.0),
       child: Column(children: [
         SizedBox(
             height: 50,
@@ -66,7 +66,7 @@ class _RequestState extends State<Request> {
               ),
             )),
         Padding(
-          padding: const EdgeInsets.only(top: 350.0),
+          padding: const EdgeInsets.only(top: 370.0),
           child: FloatingActionButton(
             backgroundColor: const Color.fromARGB(255, 60, 97, 162),
             shape: CircleBorder(),
@@ -79,7 +79,7 @@ class _RequestState extends State<Request> {
             },
             child: Icon(
               Icons.add,
-              size: 40,
+              size: 50,
               color: Colors.white,
             ),
           ),
@@ -118,85 +118,91 @@ class _AcceptState extends State<Accept> {
             style: TextStyle(fontSize: 17),
           ),
           Padding(
-            padding: const EdgeInsets.only(top: 18.0),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: [
-                Text(
-                  'Department :',
-                  style: TextStyle(fontSize: 17),
-                ),
-                Text(
-                  'BCom',
-                  style: TextStyle(fontSize: 17),
-                )
-              ],
-            ),
-          ),
-          Padding(
-            padding: const EdgeInsets.only(top: 18.0),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: [
-                Text(
-                  'Request Event :',
-                  style: TextStyle(fontSize: 17),
-                ),
-                Text(
-                  'Holi Festival',
-                  style: TextStyle(fontSize: 17),
-                )
-              ],
-            ),
-          ),
-          Padding(
-            padding: const EdgeInsets.only(top: 18.0),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: [
-                Text(
-                  ' Date   :',
-                  style: TextStyle(fontSize: 17),
-                ),
-                Text(
-                  '25/05/2024',
-                  style: TextStyle(fontSize: 17),
-                )
-              ],
-            ),
-          ),
-          Padding(
-            padding: const EdgeInsets.only(top: 18.0),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: [
-                Text(
-                  ' Time   :',
-                  style: TextStyle(fontSize: 17),
-                ),
-                Text(
-                  '10.00 AM',
-                  style: TextStyle(fontSize: 17),
-                )
-              ],
-            ),
-          ),
-          Padding(
-            padding: const EdgeInsets.only(top: 18.0),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: [
-                Text(
-                  ' Location   :',
-                  style: TextStyle(fontSize: 17),
-                ),
-                Text(
-                  'College Hall',
-                  style: TextStyle(fontSize: 17),
-                )
-              ],
-            ),
-          ),
+              padding: const EdgeInsets.only(top: 18.0),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        'Department',
+                        style: TextStyle(fontSize: 17),
+                      ),
+                      Text(
+                        'Request Event',
+                        style: TextStyle(fontSize: 17),
+                      ),
+                      Text(
+                        ' Date',
+                        style: TextStyle(fontSize: 17),
+                      ),
+                      Text(
+                        ' Time',
+                        style: TextStyle(fontSize: 17),
+                      ),
+                      Text(
+                        ' Location',
+                        style: TextStyle(fontSize: 17),
+                      ),
+                    ],
+                  ),
+                  Column(
+                    children: [
+                      Text(
+                        ':',
+                        style: TextStyle(
+                            fontWeight: FontWeight.bold, fontSize: 17),
+                      ),
+                      Text(
+                        ':',
+                        style: TextStyle(
+                            fontWeight: FontWeight.bold, fontSize: 17),
+                      ),
+                      Text(
+                        ':',
+                        style: TextStyle(
+                            fontWeight: FontWeight.bold, fontSize: 17),
+                      ),
+                      Text(
+                        ':',
+                        style: TextStyle(
+                            fontWeight: FontWeight.bold, fontSize: 17),
+                      ),
+                      Text(
+                        ':',
+                        style: TextStyle(
+                            fontWeight: FontWeight.bold, fontSize: 17),
+                      ),
+                    ],
+                  ),
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.end,
+                    children: [
+                      Text(
+                        ' BCom',
+                        style: TextStyle(fontSize: 17),
+                      ),
+                      Text(
+                        'Holi Festival',
+                        style: TextStyle(fontSize: 17),
+                      ),
+                      Text(
+                        ' 20/04/2024',
+                        style: TextStyle(fontSize: 17),
+                      ),
+                      Text(
+                        ' 10.00 AM',
+                        style: TextStyle(fontSize: 17),
+                      ),
+                      Text(
+                        ' College Hall',
+                        style: TextStyle(fontSize: 17),
+                      ),
+                    ],
+                  )
+                ],
+              )),
           Padding(
             padding: const EdgeInsets.only(top: 50, right: 300),
             child: Text(
@@ -339,7 +345,9 @@ class _AddState extends State<Add> {
                 width: 350,
                 child: FloatingActionButton(
                   backgroundColor: const Color.fromARGB(255, 60, 97, 162),
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.of(context).pop();
+                  },
                   child: Text(
                     'Submit',
                     style: TextStyle(color: Colors.white, fontSize: 20),

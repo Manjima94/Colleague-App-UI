@@ -34,7 +34,10 @@ class _RequstState extends State<Requst> {
                 tabs: [
                   Text(
                     'Teacher',
-                    style: TextStyle(color: Colors.blueAccent, fontSize: 20),
+                    style: TextStyle(
+                      color: Colors.blueAccent,
+                      fontSize: 20,
+                    ),
                   ),
                   Text('Event',
                       style: TextStyle(color: Colors.blueAccent, fontSize: 19))
@@ -87,29 +90,36 @@ class _NotState extends State<Not> {
             Padding(
               padding: const EdgeInsets.all(18.0),
               child: Container(
-                height: 200,
+                height: 180,
                 width: 350,
                 decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(10),
                     color: Color.fromARGB(255, 167, 189, 199)),
-                child: Column(
-                  children: [
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Text(
-                          '\n  Onam\n',
-                          style: TextStyle(
-                              color: Color.fromARGB(255, 17, 113, 157),
-                              fontSize: 17),
-                        ),
-                        IconButton(
-                            onPressed: () {}, icon: Icon(Icons.delete_outline))
-                      ],
-                    ),
-                    Text(
-                        '" We are delighted to announce the upcoming Onam    Program, a celebration of joy, culture, and   togetherness! The college principal has approved the event, and we cant wait to make it a memorable occasion for all.')
-                  ],
+                child: Padding(
+                  padding: const EdgeInsets.only(left: 20),
+                  child: Column(
+                    children: [
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Text(
+                            'Onam',
+                            style: TextStyle(
+                                color: Color.fromARGB(255, 17, 113, 157),
+                                fontSize: 20),
+                          ),
+                          IconButton(
+                              onPressed: () {},
+                              icon: Icon(
+                                Icons.delete_outline,
+                                size: 30,
+                              ))
+                        ],
+                      ),
+                      Text(
+                          '" We are delighted to announce the upcoming Onam    Program, a celebration of joy, culture, and   togetherness! The college principal has approved the event, and we cant wait to make it a memorable occasion for all.')
+                    ],
+                  ),
                 ),
               ),
             ),
@@ -127,7 +137,7 @@ class _NotState extends State<Not> {
                 },
                 child: Icon(
                   Icons.add,
-                  size: 40,
+                  size: 50,
                   color: Colors.white,
                 ),
               ),
