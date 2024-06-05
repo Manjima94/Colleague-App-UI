@@ -2,10 +2,12 @@
 
 import 'package:event_project/Admin/login.dart';
 import 'package:event_project/firebase_options.dart';
-import 'package:event_project/signin.dart';
+import 'package:event_project/student/signin.dart';
 import 'package:event_project/teacher/Reg.dart';
+import 'package:event_project/teacher/signin.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -21,6 +23,7 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
+    ScreenUtil.init(context, splitScreenMode: true, minTextAdapt: true);
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
@@ -54,7 +57,7 @@ class _MainState extends State<Main> {
                 Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => Signin(),
+                      builder: (context) => StudentSignin(),
                     ));
               },
               child: Text('student'),
@@ -64,7 +67,7 @@ class _MainState extends State<Main> {
                 Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => Register(),
+                      builder: (context) => TeachSignin(),
                     ));
               },
               child: Text('teacher'),

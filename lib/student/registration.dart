@@ -1,10 +1,9 @@
-// ignore_for_file: prefer_const_constructors
-
-import 'package:event_project/signin.dart';
+import 'package:event_project/student/signin.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class Register extends StatefulWidget {
   const Register({super.key});
@@ -14,47 +13,63 @@ class Register extends StatefulWidget {
 }
 
 class _RegisterState extends State<Register> {
-  final formkey = GlobalKey<FormState>();
-  var name = TextEditingController();
-  var dep = TextEditingController();
-  var regno = TextEditingController();
-  var phone = TextEditingController();
-  var email = TextEditingController();
-  var password = TextEditingController();
+  final formKey = GlobalKey<FormState>();
+  final nameController = TextEditingController();
+  final departmentController = TextEditingController();
+  final regNoController = TextEditingController();
+  final phoneController = TextEditingController();
+  final emailController = TextEditingController();
+  final passwordController = TextEditingController();
 
-  
-  Future<void> student() async {
-    if (formkey.currentState!.validate()) {
+  Future<void> registerStudent() async {
+    if (formKey.currentState!.validate()) {
       try {
         UserCredential userCredential = await FirebaseAuth.instance
             .createUserWithEmailAndPassword(
-                email: email.text, password: password.text);
+                email: emailController.text, password: passwordController.text);
         String uid = userCredential.user!.uid;
-        final regreference =
-            await FirebaseFirestore.instance.collection('Student').add({
-          ' Name': name.text,
-          'Department' : dep.text,
-          'Reg No ' : regno.text,
-          'Mobile': phone.text,
-          'Email': email.text,
-          'Password': password.text,
-
-          // 'Confirm password': password2
+        await FirebaseFirestore.instance.collection('Student').doc(uid).set({
+          'name': nameController.text,
+          'department': departmentController.text,
+          'regNo': regNoController.text,
+          'phone': phoneController.text,
+          'email': emailController.text,
+          'Password':passwordController.text,
+          'uid': uid,
         });
-        print('Registered Successfully!!');
-        Navigator.push(
-          context,
-          MaterialPageRoute(
-            builder: (context) => Signin(),
-          ),
-        );
-      } catch (e) {
-        print('Unexpected error during registration: $e');
+
+        SharedPreferences pref = await SharedPreferences.getInstance();
+        await pref.setString('uid', uid);
+
         Fluttertoast.showToast(
-          msg: "Unexpected error during registration.",
+          msg: "Registered Successfully!",
           toastLength: Toast.LENGTH_LONG,
           gravity: ToastGravity.BOTTOM,
-          timeInSecForIosWeb: 1,
+          backgroundColor: Colors.green,
+          textColor: Colors.white,
+          fontSize: 16.0,
+        );
+
+        Navigator.pushReplacement(
+          context,
+          MaterialPageRoute(
+            builder: (context) => StudentSignin(),
+          ),
+        );
+
+        // Clear form fields
+        nameController.clear();
+        departmentController.clear();
+        regNoController.clear();
+        phoneController.clear();
+        emailController.clear();
+        passwordController.clear();
+      } catch (e) {
+        print('Error during registration: $e');
+        Fluttertoast.showToast(
+          msg: "Error: ${e.toString()}",
+          toastLength: Toast.LENGTH_LONG,
+          gravity: ToastGravity.BOTTOM,
           backgroundColor: Colors.red,
           textColor: Colors.white,
           fontSize: 16.0,
@@ -62,6 +77,7 @@ class _RegisterState extends State<Register> {
       }
     }
   }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -78,154 +94,88 @@ class _RegisterState extends State<Register> {
       body: Padding(
         padding: const EdgeInsets.all(18.0),
         child: Form(
-          key: formkey,
+          key: formKey,
           child: SingleChildScrollView(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text(
-                  'Name',
-                  style: TextStyle(fontWeight: FontWeight.w400, fontSize: 17),
+                buildTextField(
+                  label: 'Name',
+                  controller: nameController,
+                  validator: (value) {
+                    if (value!.isEmpty) {
+                      return 'Required';
+                    }
+                    return null;
+                  },
                 ),
-                Padding(
-                    padding: const EdgeInsets.only(top: 8.0, bottom: 20),
-                    child: SizedBox(
-                      height: 45,
-                      width: 350,
-                      child: TextFormField(
-                        controller: name,
-                        validator: (value) {
-                          if (value!.isEmpty) {
-                            return 'Required';
-                          }
-                          return null;
-                        },
-                        decoration:
-                            InputDecoration(enabledBorder: OutlineInputBorder()),
-                      ),
-                    )),
-                Text(
-                  'Depratment',
-                  style: TextStyle(fontWeight: FontWeight.w400, fontSize: 17),
+                               buildTextField(
+                  label: 'Department',
+                  controller: departmentController,
+                  validator: (value) {
+                    if (value!.isEmpty) {
+                      return 'Required';
+                    }
+                    return null;
+                  },
                 ),
-                Padding(
-                    padding: const EdgeInsets.only(top: 8.0, bottom: 20),
-                    child: SizedBox(
-                      height: 45,
-                      width: 350,
-                      child: TextFormField(
-                        controller: dep,
-                        validator: (value) {
-                          if (value!.isEmpty) {
-                            return 'Required';
-                          }
-                          return null;
-                        },
-                        decoration:
-                            InputDecoration(enabledBorder: OutlineInputBorder()),
-                      ),
-                    )),
-                Text(
-                  'Register No',
-                  style: TextStyle(fontWeight: FontWeight.w400, fontSize: 17),
+                buildTextField(
+                  label: 'Register No',
+                  controller: regNoController,
+                  validator: (value) {
+                    if (value!.isEmpty) {
+                      return 'Required';
+                    }
+                    return null;
+                  },
                 ),
-                Padding(
-                    padding: const EdgeInsets.only(top: 8.0, bottom: 20),
-                    child: SizedBox(
-                      height: 45,
-                      width: 350,
-                      child: TextFormField(
-                        controller: regno,
-                        validator: (value) {
-                          if (value!.isEmpty) {
-                            return 'Required';
-                          }
-                          return null;
-                        },
-                        decoration:
-                            InputDecoration(enabledBorder: OutlineInputBorder()),
-                      ),
-                    )),
-                Text(
-                  'Phone No',
-                  style: TextStyle(fontWeight: FontWeight.w400, fontSize: 17),
+                buildTextField(
+                  label: 'Phone No',
+                  controller: phoneController,
+                  keyboardType: TextInputType.number,
+                  validator: (value) {
+                    if (value!.isEmpty || value.length != 10) {
+                      return 'Enter a valid phone number';
+                    }
+                    return null;
+                  },
                 ),
-                Padding(
-                    padding: const EdgeInsets.only(top: 8.0, bottom: 20),
-                    child: SizedBox(
-                      height: 45,
-                      width: 350,
-                      child: TextFormField(
-                        keyboardType: TextInputType.number,
-                        validator: (value) {
-                          if (value!.isEmpty) {
-                            return 'Enter a valid Number';
-                          }
-                          return null;
-                        },
-                        controller: phone,
-                        decoration:
-                            InputDecoration(enabledBorder: OutlineInputBorder()),
-                      ),
-                    )),
-                Text(
-                  'Email',
-                  style: TextStyle(fontWeight: FontWeight.w400, fontSize: 17),
+                buildTextField(
+                  label: 'Email',
+                  controller: emailController,
+                  validator: (value) {
+                    if (value!.isEmpty || !RegExp(r'^[^@]+@[^@]+\.[^@]+').hasMatch(value)) {
+                      return 'Enter a valid email';
+                    }
+                    return null;
+                  },
                 ),
-                Padding(
-                    padding: const EdgeInsets.only(top: 8.0, bottom: 20),
-                    child: SizedBox(
-                      height: 45,
-                      width: 350,
-                      child: TextFormField(
-                        controller: email,
-                        validator: (value) {
-                          if (value!.isEmpty) {
-                            return 'Enter a valid email';
-                          }
-                          return null;
-                        },
-                        decoration:
-                            InputDecoration(enabledBorder: OutlineInputBorder()),
-                      ),
-                    )),
-                Text(
-                  'Password',
-                  style: TextStyle(fontWeight: FontWeight.w400, fontSize: 17),
+                buildTextField(
+                  label: 'Password',
+                  controller: passwordController,
+                  obscureText: true,
+                  validator: (value) {
+                    if (value!.isEmpty || value.length < 6) {
+                      return 'Enter a valid password (min. 6 characters)';
+                    }
+                    return null;
+                  },
                 ),
-                Padding(
-                    padding: const EdgeInsets.only(top: 8.0, bottom: 40),
-                    child: SizedBox(
-                      height: 45,
-                      width: 350,
-                      child: TextFormField(
-                        controller: password,
-                        validator: (value) {
-                          if (value!.isEmpty) {
-                            return 'Enter a valid password';
-                          }
-                          return null;
-                        },
-                        decoration:
-                            InputDecoration(enabledBorder: OutlineInputBorder()),
-                      ),
-                    )),
                 Padding(
                   padding: const EdgeInsets.only(left: 30.0),
                   child: SizedBox(
-                      height: 50,
-                      width: 300,
-                      child: FloatingActionButton(
-                        backgroundColor: const Color.fromARGB(255, 60, 97, 162),
-                        onPressed: () {
-                          student();
-                        },
-                        child: Text(
-                          'Submit',
-                          style: TextStyle(color: Colors.white, fontSize: 20),
-                        ),
-                      )),
-                )
+                    height: 50,
+                    width: 300,
+                    child: ElevatedButton(
+                      style: ButtonStyle(backgroundColor: MaterialStatePropertyAll( const Color.fromARGB(255, 60, 97, 162),)),
+                      onPressed: registerStudent,
+                      child: Text(
+                        'Submit',
+                        style: TextStyle(color: Colors.white, fontSize: 20),
+                      ),
+                    ),
+                  ),
+                ),
               ],
             ),
           ),
@@ -233,4 +183,39 @@ class _RegisterState extends State<Register> {
       ),
     );
   }
+
+  Widget buildTextField({
+    required String label,
+    required TextEditingController controller,
+    TextInputType keyboardType = TextInputType.text,
+    bool obscureText = false,
+    required String? Function(String?) validator,
+  }) {
+    return Padding(
+      padding: const EdgeInsets.only(top: 8.0, bottom: 20),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(
+            label,
+            style: TextStyle(fontWeight: FontWeight.w400, fontSize: 17),
+          ),
+          SizedBox(
+            height: 45,
+            width: 350,
+            child: TextFormField(
+              controller: controller,
+              keyboardType: keyboardType,
+              obscureText: obscureText,
+              validator: validator,
+              decoration: InputDecoration(
+                enabledBorder: OutlineInputBorder(),
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
 }
+

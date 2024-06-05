@@ -1,5 +1,7 @@
 // ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors
 
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:event_project/student/reqevent.dart';
 import 'package:flutter/material.dart';
 
 class Request extends StatefulWidget {
@@ -65,6 +67,10 @@ class _RequestState extends State<Request> {
                 ),
               ),
             )),
+            // StreamBuilder(stream: FirebaseFirestore.instance.
+            // collection('Request Event').
+            // snapshots()
+            // , builder: context,AsyncSnapshot<QuerySnapshot>snapshot),
         Padding(
           padding: const EdgeInsets.only(top: 370.0),
           child: FloatingActionButton(
@@ -74,7 +80,7 @@ class _RequestState extends State<Request> {
               Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => Add(),
+                    builder: (context) => ReqEvent(),
                   ));
             },
             child: Icon(
@@ -240,122 +246,4 @@ class _AcceptState extends State<Accept> {
   }
 }
 
-class Add extends StatefulWidget {
-  const Add({super.key});
-
-  @override
-  State<Add> createState() => _AddState();
-}
-
-class _AddState extends State<Add> {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        toolbarHeight: 100,
-        title: Padding(
-          padding: const EdgeInsets.only(left: 70.0),
-          child: Text(
-            'Event Request',
-            style: TextStyle(fontWeight: FontWeight.bold),
-          ),
-        ),
-      ),
-      body: Padding(
-        padding: const EdgeInsets.all(18.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text(
-              'Request Event',
-              style: TextStyle(fontWeight: FontWeight.w400, fontSize: 17),
-            ),
-            Padding(
-                padding: const EdgeInsets.only(top: 8.0, bottom: 20),
-                child: SizedBox(
-                  height: 45,
-                  width: 350,
-                  child: TextFormField(
-                    decoration:
-                        InputDecoration(enabledBorder: OutlineInputBorder()),
-                  ),
-                )),
-            Text(
-              'Name',
-              style: TextStyle(fontWeight: FontWeight.w400, fontSize: 17),
-            ),
-            Padding(
-                padding: const EdgeInsets.only(top: 8.0, bottom: 20),
-                child: SizedBox(
-                  height: 45,
-                  width: 350,
-                  child: TextFormField(
-                    decoration:
-                        InputDecoration(enabledBorder: OutlineInputBorder()),
-                  ),
-                )),
-            Text(
-              'Depratment ',
-              style: TextStyle(fontWeight: FontWeight.w400, fontSize: 17),
-            ),
-            Padding(
-                padding: const EdgeInsets.only(top: 8.0, bottom: 20),
-                child: SizedBox(
-                  height: 45,
-                  width: 350,
-                  child: TextFormField(
-                    decoration:
-                        InputDecoration(enabledBorder: OutlineInputBorder()),
-                  ),
-                )),
-            Text(
-              'Phone No',
-              style: TextStyle(fontWeight: FontWeight.w400, fontSize: 17),
-            ),
-            Padding(
-                padding: const EdgeInsets.only(top: 8.0, bottom: 20),
-                child: SizedBox(
-                  height: 45,
-                  width: 350,
-                  child: TextFormField(
-                    decoration:
-                        InputDecoration(enabledBorder: OutlineInputBorder()),
-                  ),
-                )),
-            Text(
-              'Description',
-              style: TextStyle(fontWeight: FontWeight.w400, fontSize: 17),
-            ),
-            Padding(
-                padding: const EdgeInsets.only(top: 8.0, bottom: 50),
-                child: Container(
-                  height: 130,
-                  width: 350,
-                  decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(10),
-                      border: Border.all()),
-                  child: TextFormField(
-                    decoration: InputDecoration(
-                        border:
-                            UnderlineInputBorder(borderSide: BorderSide.none)),
-                  ),
-                )),
-            SizedBox(
-                height: 50,
-                width: 350,
-                child: FloatingActionButton(
-                  backgroundColor: const Color.fromARGB(255, 60, 97, 162),
-                  onPressed: () {
-                    Navigator.of(context).pop();
-                  },
-                  child: Text(
-                    'Submit',
-                    style: TextStyle(color: Colors.white, fontSize: 20),
-                  ),
-                ))
-          ],
-        ),
-      ),
-    );
-  }
-}
+    

@@ -16,48 +16,48 @@ class _PhotoState extends State<Photo> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      body: Stack(
         children: [
-          Row(
-            children: [
-              Container(
-                height: 100,
-                width: 100,
-                child: Image(
-                    image: NetworkImage(
-                        'https://www.medianews4u.com/wp-content/uploads/2022/09/Heartwarming-Onam-campaigns-from-brands-spread-festive-delight.jpg')),
-              ),
-              SizedBox(
-                height: 100,
-                width: 100,
-                child: Image(
-                    image: NetworkImage(
-                        'https://www.thomascook.in/blog/wp-content/uploads/2019/08/onam-festival-1024x683.jpg')),
-              )
-            ],
-          ),
-          Padding(
-            padding: const EdgeInsets.only(bottom: 30),
-            child: FloatingActionButton(
-              backgroundColor: const Color.fromARGB(255, 60, 97, 162),
-              shape: CircleBorder(),
-              onPressed: () {
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => Addphoto(),
-                    ));
-              },
-              child: Icon(
-                Icons.add,
-                size: 40,
-                color: Colors.white,
-              ),
+              GridView(
+                        
+              gridDelegate:
+                  SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 3,mainAxisSpacing: 10,crossAxisSpacing: 10),
+                  
+              children: [
+                SizedBox(
+                  height: 60,
+                  width: 200,
+                  child: Image.network(fit: BoxFit.cover,
+                      'https://www.medianews4u.com/wp-content/uploads/2022/09/Heartwarming-Onam-campaigns-from-brands-spread-festive-delight.jpg'),
+                ),
+                Image.network(fit: BoxFit.cover,
+                    'https://www.thomascook.in/blog/wp-content/uploads/2019/08/onam-festival-1024x683.jpg')
+              ]),
+              
+      Padding(
+        padding: const EdgeInsets.only(bottom: 30),
+        child: Align(alignment: Alignment.bottomCenter,
+          child: FloatingActionButton(
+            backgroundColor: const Color.fromARGB(255, 60, 97, 162),
+            shape: CircleBorder(),
+            onPressed: () {
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => Addphoto(),
+                  ));
+            },
+            child: Icon(
+              Icons.add,
+              size: 40,
+              color: Colors.white,
             ),
           ),
-        ],
+        ),
       ),
+            ],
+      ),
+
     );
   }
 }

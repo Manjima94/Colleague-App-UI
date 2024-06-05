@@ -1,10 +1,11 @@
 // ignore_for_file: prefer_const_constructors
 
-import 'package:event_project/Admin/event2teacher.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:event_project/Admin/event2teacher.dart';
 
 class AdminEvent2 extends StatefulWidget {
-  const AdminEvent2({super.key});
+  const AdminEvent2({Key? key}) : super(key: key);
 
   @override
   State<AdminEvent2> createState() => _AdminEvent2State();
@@ -19,38 +20,54 @@ class _AdminEvent2State extends State<AdminEvent2> {
         body: Column(
           children: [
             Padding(
-              padding: const EdgeInsets.only(top: 30),
+              padding: EdgeInsets.only(top: 30.h),
               child: Padding(
-                padding: const EdgeInsets.only(left: 10),
+                padding: EdgeInsets.only(left: 10.w),
                 child: Container(
-                  height: 30,
-                  width: 200,
+                  height: 30.h,
+                  width: 150.w,
                   decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(5),
-                      color: Color.fromARGB(255, 181, 204, 230)),
+                    borderRadius: BorderRadius.circular(5.r),
+                    color: Color.fromARGB(255, 181, 204, 230),
+                  ),
                   child: TabBar(
-                      labelColor: Colors.white,
-                      indicatorSize: TabBarIndicatorSize.tab,
-                      indicator: BoxDecoration(
-                        borderRadius: BorderRadius.circular(5),
-                        color: const Color.fromARGB(255, 60, 97, 162),
+                    labelColor: Colors.white,
+                    indicatorSize: TabBarIndicatorSize.tab,
+                    indicator: BoxDecoration(
+                      borderRadius: BorderRadius.circular(5.r),
+                      color: const Color.fromARGB(255, 60, 97, 162),
+                    ),
+                    tabAlignment: TabAlignment.center,
+                    isScrollable: true,
+                    tabs: [
+                      Text(
+                        'Students',
+                        style: TextStyle(fontSize: 18.sp),
                       ),
-                      tabAlignment: TabAlignment.center,
-                      isScrollable: true,
-                      tabs: const [
-                        Text('Students', style: TextStyle(fontSize: 18)),
-                        Text('Teacher', style: TextStyle(fontSize: 18))
-                      ]),
+                      Text(
+                        'Teacher',
+                        style: TextStyle(fontSize: 18.sp),
+                      ),
+                    ],
+                  ),
                 ),
               ),
             ),
-            Expanded(child: TabBarView(children: [EveStudents(), EveTeacher()]))
+            Expanded(
+              child: TabBarView(
+                children: [
+                  EveStudents(),
+                  EveTeacher(),
+                ],
+              ),
+            ),
           ],
         ),
       ),
     );
   }
 }
+
 
 class EveStudents extends StatefulWidget {
   const EveStudents({super.key});

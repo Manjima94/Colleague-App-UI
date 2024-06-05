@@ -1,20 +1,24 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:event_project/student/registration.dart';
+import 'package:event_project/Admin/Tabbar.dart';
+
 import 'package:event_project/student/tabbar.dart';
+import 'package:event_project/teacher/Reg.dart';
+import 'package:event_project/teacher/tabbar2.dart';
+
 
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-class Signin extends StatefulWidget {
-  const Signin({super.key});
+class TeachSignin extends StatefulWidget {
+  const TeachSignin({super.key});
 
   @override
-  State<Signin> createState() => _SigninState();
+  State<TeachSignin> createState() => _TeachSigninState();
 }
 
-class _SigninState extends State<Signin> {
+class _TeachSigninState extends State<TeachSignin> {
   var stuemail = TextEditingController();
   var stupassword = TextEditingController();
 
@@ -86,7 +90,9 @@ class _SigninState extends State<Signin> {
                         ),
                       ),
                       Padding(
-                        padding: const EdgeInsets.only(top: 30,),
+                        padding: const EdgeInsets.only(
+                          top: 30,
+                        ),
                         child: SizedBox(
                           width: 350,
                           child: TextFormField(
@@ -105,8 +111,11 @@ class _SigninState extends State<Signin> {
                         ),
                       ),
                       Padding(
-                        padding: const EdgeInsets.only(left:200,bottom: 30),
-                        child: Center(child: TextButton(onPressed: (){}, child: Text('Forgot Password?'))),
+                        padding: const EdgeInsets.only(left: 200, bottom: 30),
+                        child: Center(
+                            child: TextButton(
+                                onPressed: () {},
+                                child: Text('Forgot Password?'))),
                       ),
                       SizedBox(
                           height: 50,
@@ -137,7 +146,7 @@ class _SigninState extends State<Signin> {
                               Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                  builder: (context) => Tabb(),
+                                  builder: (context) => Evnt(),
                                 ),
                               );
                             },
